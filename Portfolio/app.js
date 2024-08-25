@@ -6,14 +6,17 @@ var typed = new Typed('#element', {
   });
 
 let links = document.getElementsByClassName('nav-link');
-links[0].style.color = "#dfc8e4";
 
+links[0].style.color = "mediumorchid";
+links[0].style.setProperty("--opacity", 1);
 
 for(let link of links){
   link.addEventListener("click", () => {
     for(let li of links) {
       li.style.color = "#fff";
+      li.style.setProperty("--opacity", 0);
     }
-    link.style.color = "#dfc8e4";
+    link.style.color = "mediumorchid";
+    link.style.setProperty("--opacity", 1);
   })
 }
